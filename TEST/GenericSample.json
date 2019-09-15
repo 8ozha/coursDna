@@ -1,0 +1,1663 @@
+{ 
+
+		"Entities": [
+			{
+				"EntityId": "String",
+				"Name": "String",
+				"Tag": "String",
+				"Description": "String",
+				"FormalName": "NCName",
+				"IdColumnRef": "String",
+				"ParentIdColumnRef": "String",
+				"NameColumnRef": "String",
+				"IsRepeatable": "Y",
+				"IsHierarchical": "Y",
+				"SortOrder": 100,
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				],
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}, {
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}
+				],
+				"Rules": [
+					{
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}, {
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}
+				]
+			}, {
+				"EntityId": "String",
+				"Name": "String",
+				"Tag": "String",
+				"Description": "String",
+				"FormalName": "NCName",
+				"IdColumnRef": "String",
+				"ParentIdColumnRef": "String",
+				"NameColumnRef": "String",
+				"IsRepeatable": "Y",
+				"IsHierarchical": "Y",
+				"SortOrder": 100,
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				],
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}, {
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}
+				],
+				"Rules": [
+					{
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}, {
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}
+				]
+			}
+		],
+		"Schemas": [
+			{
+				"SchemaId": "String",
+				"TargetRef": "String",
+				"Name": "String",
+				"Description": "String",
+				"RootTag": "NCName",
+				"ObjectTag": "NCName",
+				"Owner": "NCName",
+				"Prefix": "NCName",
+				"Suffix": "S",
+				"IsLogical": "Y",
+				"PhysicalSchemaRef": "String",
+				"logicalSchemaRef": "String",
+				"SortOrder": 100,
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				]
+			}, {
+				"SchemaId": "String",
+				"TargetRef": "String",
+				"Name": "String",
+				"Description": "String",
+				"RootTag": "NCName",
+				"ObjectTag": "NCName",
+				"Owner": "NCName",
+				"Prefix": "NCName",
+				"Suffix": "S",
+				"IsLogical": "Y",
+				"PhysicalSchemaRef": "String",
+				"logicalSchemaRef": "String",
+				"SortOrder": 100,
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				]
+			}
+		],
+		"Targets": [
+			{
+				"TargetId": "String",
+				"Name": "String",
+				"Description": "String",
+				"TargetType": "SPARK",
+				"SortOrder": 1,
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				]
+			}, {
+				"TargetId": "String",
+				"Name": "String",
+				"Description": "String",
+				"TargetType": "SPARK",
+				"SortOrder": 1,
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				]
+			}
+		],
+		"Tables": [
+			{
+				"TableId": "String",
+				"SchemaRef": "String",
+				"EntityRef": "String",
+				"Name": "String",
+				"Tag": "String",
+				"Description": "String",
+				"SortOrder": 100,
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				],
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}, {
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}
+				]
+			}, {
+				"TableId": "String",
+				"SchemaRef": "String",
+				"EntityRef": "String",
+				"Name": "String",
+				"Tag": "String",
+				"Description": "String",
+				"SortOrder": 100,
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				],
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}, {
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}
+				]
+			}
+		],
+		"Functions": [
+			{
+				"FunctionId": "String",
+				"Name": "String",
+				"Description": "String",
+				"DbFunctionType": "A",
+				"IsEmbedded": "Y",
+				"Language": "SQL",
+				"Body": "String",
+				"Returns": "S",
+				"Parameters": [
+					{
+						"Position": 0,
+						"Name": "String",
+						"Datatype": "S"
+					}, {
+						"Position": 0,
+						"Name": "String",
+						"Datatype": "S"
+					}
+				]
+			}, {
+				"FunctionId": "String",
+				"Name": "String",
+				"Description": "String",
+				"DbFunctionType": "A",
+				"IsEmbedded": "Y",
+				"Language": "SQL",
+				"Body": "String",
+				"Returns": "S",
+				"Parameters": [
+					{
+						"Position": 0,
+						"Name": "String",
+						"Datatype": "S"
+					}, {
+						"Position": 0,
+						"Name": "String",
+						"Datatype": "S"
+					}
+				]
+			}
+		],
+		"Queries": [
+			{
+				"QueryId": "String",
+				"SchemaRef": "String",
+				"Name": "String",
+				"Description": "String",
+				"Tag": "String",
+				"RootTag": "NCName",
+				"ObjectTag": "NCName",
+				"IsDefaultedNull": "Y",
+				"UseOutputTags": "Y",
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				],
+				"Outputs": [
+					{
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}, {
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}
+				],
+				"Filters": [
+					{
+						"FilterRef": "String",
+						"SortOrder": 10
+					}, {
+						"FilterRef": "String",
+						"SortOrder": 10
+					}
+				],
+				"Rules": [
+					{
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}, {
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}
+				]
+			}, {
+				"QueryId": "String",
+				"SchemaRef": "String",
+				"Name": "String",
+				"Description": "String",
+				"Tag": "String",
+				"RootTag": "NCName",
+				"ObjectTag": "NCName",
+				"IsDefaultedNull": "Y",
+				"UseOutputTags": "Y",
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				],
+				"Outputs": [
+					{
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}, {
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}
+				],
+				"Filters": [
+					{
+						"FilterRef": "String",
+						"SortOrder": 10
+					}, {
+						"FilterRef": "String",
+						"SortOrder": 10
+					}
+				],
+				"Rules": [
+					{
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}, {
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}
+				]
+			}
+		],
+		"Outputs": [
+			{
+				"OutputId": "String",
+				"SchemaRef": "String",
+				"Name": "String",
+				"Description": "String",
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				],
+				"Tables": [
+					{
+						"TableRef": "String",
+						"TableAlias": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsHierarchical": "Y",
+						"MinNumberOfRows": 0,
+						"MaxNumberOfRows": 0,
+						"SortOrder": 10,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						],
+						"Columns": [
+							{
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								],
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								]
+							}, {
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								],
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								]
+							}
+						]
+					}, {
+						"TableRef": "String",
+						"TableAlias": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsHierarchical": "Y",
+						"MinNumberOfRows": 0,
+						"MaxNumberOfRows": 0,
+						"SortOrder": 10,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						],
+						"Columns": [
+							{
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								],
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								]
+							}, {
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								],
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								]
+							}
+						]
+					}
+				]
+			}, {
+				"OutputId": "String",
+				"SchemaRef": "String",
+				"Name": "String",
+				"Description": "String",
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				],
+				"Tables": [
+					{
+						"TableRef": "String",
+						"TableAlias": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsHierarchical": "Y",
+						"MinNumberOfRows": 0,
+						"MaxNumberOfRows": 0,
+						"SortOrder": 10,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						],
+						"Columns": [
+							{
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								],
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								]
+							}, {
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								],
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								]
+							}
+						]
+					}, {
+						"TableRef": "String",
+						"TableAlias": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsHierarchical": "Y",
+						"MinNumberOfRows": 0,
+						"MaxNumberOfRows": 0,
+						"SortOrder": 10,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						],
+						"Columns": [
+							{
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								],
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								]
+							}, {
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								],
+								"OutputColumnId": "String",
+								"Name": "String",
+								"Description": "String",
+								"Format": "?",
+								"IsVisible": "Y",
+								"IsInsertable": "Y",
+								"IsEditable": "Y",
+								"IsRequired": "Y",
+								"IsOrderBy": "Y",
+								"OrderBySortOrder": 0,
+								"OrderByDirection": "ASC",
+								"IsGroupBy": "Y",
+								"ColumnRef": "String",
+								"Properties": [
+									{
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}, {
+										"PropertyId": "String",
+										"PropertyValue": "String",
+										"PropertyIndex": "String",
+										"SortOrder": 0
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		],
+		"Filters": [
+			{
+				"FilterId": "String",
+				"SchemaRef": "String",
+				"Name": "String",
+				"Description": "String",
+				"Tag": "String",
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				],
+				"Conditions": [
+					{
+						"LogicalOperator": "String",
+						"UnaryOperator": "String",
+						"HasOpenBracket": "Y",
+						"TableLeftRef": "String",
+						"ColumnLeftRef": "String",
+						"LeftJoinIndicator": "Y",
+						"Operator": "=",
+						"TableRightRef": "String",
+						"ColumnRightRef": "String",
+						"RightJoinIndicator": "Y",
+						"HasClosingBracket": "Y",
+						"IsVisible": "Y",
+						"IsKeyField": "Y",
+						"IsRequired": "Y",
+						"IsEditable": "Y",
+						"SortOrder": 0,
+						"Name": "String",
+						"Description": "String",
+						"GroupId": "String",
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}, {
+						"LogicalOperator": "String",
+						"UnaryOperator": "String",
+						"HasOpenBracket": "Y",
+						"TableLeftRef": "String",
+						"ColumnLeftRef": "String",
+						"LeftJoinIndicator": "Y",
+						"Operator": "=",
+						"TableRightRef": "String",
+						"ColumnRightRef": "String",
+						"RightJoinIndicator": "Y",
+						"HasClosingBracket": "Y",
+						"IsVisible": "Y",
+						"IsKeyField": "Y",
+						"IsRequired": "Y",
+						"IsEditable": "Y",
+						"SortOrder": 0,
+						"Name": "String",
+						"Description": "String",
+						"GroupId": "String",
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}
+				]
+			}, {
+				"FilterId": "String",
+				"SchemaRef": "String",
+				"Name": "String",
+				"Description": "String",
+				"Tag": "String",
+				"Properties": [
+					{
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}, {
+						"PropertyId": "String",
+						"PropertyValue": "String",
+						"PropertyIndex": "String",
+						"SortOrder": 0
+					}
+				],
+				"Conditions": [
+					{
+						"LogicalOperator": "String",
+						"UnaryOperator": "String",
+						"HasOpenBracket": "Y",
+						"TableLeftRef": "String",
+						"ColumnLeftRef": "String",
+						"LeftJoinIndicator": "Y",
+						"Operator": "=",
+						"TableRightRef": "String",
+						"ColumnRightRef": "String",
+						"RightJoinIndicator": "Y",
+						"HasClosingBracket": "Y",
+						"IsVisible": "Y",
+						"IsKeyField": "Y",
+						"IsRequired": "Y",
+						"IsEditable": "Y",
+						"SortOrder": 0,
+						"Name": "String",
+						"Description": "String",
+						"GroupId": "String",
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}, {
+						"LogicalOperator": "String",
+						"UnaryOperator": "String",
+						"HasOpenBracket": "Y",
+						"TableLeftRef": "String",
+						"ColumnLeftRef": "String",
+						"LeftJoinIndicator": "Y",
+						"Operator": "=",
+						"TableRightRef": "String",
+						"ColumnRightRef": "String",
+						"RightJoinIndicator": "Y",
+						"HasClosingBracket": "Y",
+						"IsVisible": "Y",
+						"IsKeyField": "Y",
+						"IsRequired": "Y",
+						"IsEditable": "Y",
+						"SortOrder": 0,
+						"Name": "String",
+						"Description": "String",
+						"GroupId": "String",
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}
+				]
+			}
+		],
+		"Workflows": {
+			"WorkflowId": "String",
+			"Tag": "String",
+			"Description": "String",
+			"SortOrder": 1,
+			"IsRestartable": "Y",
+			"MaxRetryCount": 0,
+			"Blocks": [
+				{
+					"BlockId": "String",
+					"Name": "String",
+					"Tag": "String",
+					"Description": "String",
+					"SortOrder": 1,
+					"Steps": [
+						{
+							"StepRef": "String",
+							"SortOrder": 1
+						}, {
+							"StepRef": "String",
+							"SortOrder": 1
+						}
+					]
+				}, {
+					"BlockId": "String",
+					"Name": "String",
+					"Tag": "String",
+					"Description": "String",
+					"SortOrder": 1,
+					"Steps": [
+						{
+							"StepRef": "String",
+							"SortOrder": 1
+						}, {
+							"StepRef": "String",
+							"SortOrder": 1
+						}
+					]
+				}
+			],
+			"Steps": [
+				{
+					"StepId": "String",
+					"Name": "String",
+					"Tag": "String",
+					"Description": "String",
+					"QueryRef": "String",
+					"Action": "INSERT",
+					"ExecutionEngine": "String",
+					"SortOrder": 1,
+					"StepTargets": [
+						{
+							"TargetSchemaRef": "String",
+							"TargetTableRef": "String"
+						}, {
+							"TargetSchemaRef": "String",
+							"TargetTableRef": "String"
+						}
+					],
+					"StepDependencies": [
+						{
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"BlockRef": "String",
+							"MinCompleted": 0,
+							"MaxCompleted": 0,
+							"MinSucceeded": 0,
+							"MaxSucceeded": 0
+						}, {
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"BlockRef": "String",
+							"MinCompleted": 0,
+							"MaxCompleted": 0,
+							"MinSucceeded": 0,
+							"MaxSucceeded": 0
+						}
+					],
+					"Properties": [
+						{
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}, {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					],
+					"StepVariables": [
+						{
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}, {
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}
+					],
+					"StepValidation": {
+						"ValidationId": "String",
+						"FilterRef": "String",
+						"Threshold": "String",
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"Exceptions": {
+							"ExceptionId": "String",
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"ErrorMessage": "String",
+							"SchemaRef": "String",
+							"TableRef": "String",
+							"Severity": "Severe",
+							"Action": "INSERT",
+							"ExceptionColumns": {
+								"SchemaRef": "String",
+								"TableRef": "String",
+								"ColumnRef": "String",
+								"OutputColumnRef": "String",
+								"ColumnFunction": "String",
+								"SortOrder": 1
+							}
+						}
+					}
+				}, {
+					"StepId": "String",
+					"Name": "String",
+					"Tag": "String",
+					"Description": "String",
+					"QueryRef": "String",
+					"Action": "INSERT",
+					"ExecutionEngine": "String",
+					"SortOrder": 1,
+					"StepTargets": [
+						{
+							"TargetSchemaRef": "String",
+							"TargetTableRef": "String"
+						}, {
+							"TargetSchemaRef": "String",
+							"TargetTableRef": "String"
+						}
+					],
+					"StepDependencies": [
+						{
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"BlockRef": "String",
+							"MinCompleted": 0,
+							"MaxCompleted": 0,
+							"MinSucceeded": 0,
+							"MaxSucceeded": 0
+						}, {
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"BlockRef": "String",
+							"MinCompleted": 0,
+							"MaxCompleted": 0,
+							"MinSucceeded": 0,
+							"MaxSucceeded": 0
+						}
+					],
+					"Properties": [
+						{
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}, {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					],
+					"StepVariables": [
+						{
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}, {
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}
+					],
+					"StepValidation": {
+						"ValidationId": "String",
+						"FilterRef": "String",
+						"Threshold": "String",
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"Exceptions": {
+							"ExceptionId": "String",
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"ErrorMessage": "String",
+							"SchemaRef": "String",
+							"TableRef": "String",
+							"Severity": "Severe",
+							"Action": "INSERT",
+							"ExceptionColumns": {
+								"SchemaRef": "String",
+								"TableRef": "String",
+								"ColumnRef": "String",
+								"OutputColumnRef": "String",
+								"ColumnFunction": "String",
+								"SortOrder": 1
+							}
+						}
+					}
+				}
+			],
+			"Variables": [
+				{
+					"VariableId": "String",
+					"Name": "String",
+					"DataType": "S",
+					"DefaultValue": "String",
+					"QueryDefaultValue": "String",
+					"OutputColumnRef": "String",
+					"SortOrder": 1
+				}, {
+					"VariableId": "String",
+					"Name": "String",
+					"DataType": "S",
+					"DefaultValue": "String",
+					"QueryDefaultValue": "String",
+					"OutputColumnRef": "String",
+					"SortOrder": 1
+				}
+			]
+		},
+		"CodeLists": [
+			{
+				"CodeListId": "String",
+				"Name": "String",
+				"Description": "String",
+				"Datatype": "S",
+				"Values": [
+					{
+						"Value": "String",
+						"Description": "String",
+						"SortOrder": 10
+					}, {
+						"Value": "String",
+						"Description": "String",
+						"SortOrder": 10
+					}
+				],
+				"SortOrder": 10
+			}, {
+				"CodeListId": "String",
+				"Name": "String",
+				"Description": "String",
+				"Datatype": "S",
+				"Values": [
+					{
+						"Value": "String",
+						"Description": "String",
+						"SortOrder": 10
+					}, {
+						"Value": "String",
+						"Description": "String",
+						"SortOrder": 10
+					}
+				],
+				"SortOrder": 10
+			}
+		]
+	}

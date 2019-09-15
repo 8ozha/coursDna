@@ -1,0 +1,1730 @@
+{
+		"Entities": [
+			{
+				"EntityId": "SensorDataStaging",
+				"Name": "SensorDataStaging",
+				"Description": "SensorDataStaging",
+				"FormalName": "SensorDataStaging",
+				"IsRepeatable": "N",
+				"IsHierarchical": "N",
+				"SortOrder": 100,
+				"Columns": [
+					{
+						"ColumnId": "SensorIdRaw",
+						"PhysicalName": "SensorIdRaw",
+						"Name": "SensorIdRaw",
+						"Description": "Unique Sensor Id",
+						"IsRequired": "Y",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10
+					}, {
+						"ColumnId": "DateRaw",
+						"PhysicalName": "DateRaw",
+						"Name": "DateRaw",
+						"Description": "Datetimestamp (YYYY-MM-DD HH:MM:SS.mmm",
+						"IsRequired": "Y",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "D",
+						"SortOrder": 20
+					}, {
+						"ColumnId": "TemperatureRaw",
+						"PhysicalName": "TemperatureRaw",
+						"Name": "TemperatureRaw",
+						"Description": "Temperature in C",
+						"IsRequired": "N",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "N",
+						"SortOrder": 30
+					}, {
+						"ColumnId": "WindSpeedRaw",
+						"PhysicalName": "WindSpeedRaw",
+						"Name": "WindSpeedRaw",
+						"Description": "Wind Speed in MPH",
+						"IsRequired": "N",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "N",
+						"SortOrder": 40
+					}, {
+						"ColumnId": "WindDirectionRaw",
+						"PhysicalName": "WindDirectionRaw",
+						"Name": "WindDirectionRaw",
+						"Description": "Wind Direction is measured in degrees clockwise from due North.",
+						"IsRequired": "N",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "N",
+						"SortOrder": 50
+					}, {
+						"ColumnId": "SummaryRaw",
+						"PhysicalName": "SummaryRaw",
+						"Name": "SummaryRaw",
+						"Description": "Description of [weather] conditions. e.g. \"broken clouds\"",
+						"IsRequired": "N",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 60
+					}
+				],
+				"Rules": {
+					"RuleId": "SensorIdRaw_Index",
+					"Name": "SensorIdRaw",
+					"Description": "SensorId Index",
+					"ConstraintType": "PK",
+					"ParentEntityRef": "SensorDataStaging",
+					"SortOrder": 10,
+					"Columns": {
+						"ColumnRef": "SensorIdRaw",
+						"SortOrder": 10
+					}
+				}
+			}, {
+				"EntityId": "SensorDataCandidate",
+				"Name": "SensorDataCandidate",
+				"Description": "SensorDataCandidate",
+				"FormalName": "SensorDataCandidate",
+				"IsRepeatable": "Y",
+				"IsHierarchical": "N",
+				"SortOrder": 200,
+				"Columns": [
+					{
+						"ColumnId": "SensorIdCand",
+						"PhysicalName": "SensorIdCand",
+						"Name": "SensorIdCand",
+						"Description": "Unique Sensor Id",
+						"IsRequired": "Y",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10
+					}, {
+						"ColumnId": "DateCand",
+						"PhysicalName": "DateCand",
+						"Name": "DateCand",
+						"Description": "Datetimestamp (YYYY-MM-DD HH:MM:SS.mmm",
+						"IsRequired": "Y",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "D",
+						"SortOrder": 20
+					}, {
+						"ColumnId": "TemperatureCand",
+						"PhysicalName": "TemperatureCand",
+						"Name": "TemperatureRaw",
+						"Description": "Temperature in C",
+						"IsRequired": "N",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "N",
+						"SortOrder": 30
+					}, {
+						"ColumnId": "WindSpeedCand",
+						"PhysicalName": "WindSpeedCand",
+						"Name": "WindSpeedRaw",
+						"Description": "Wind Speed in MPH",
+						"IsRequired": "N",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "N",
+						"SortOrder": 40
+					}, {
+						"ColumnId": "WindDirectionCand",
+						"PhysicalName": "WindDirectionCand",
+						"Name": "WindDirectionRaw",
+						"Description": "Wind Direction is measured in degrees clockwise from due North.",
+						"IsRequired": "N",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "N",
+						"SortOrder": 50
+					}, {
+						"ColumnId": "SummaryCand",
+						"PhysicalName": "SummaryCand",
+						"Name": "SummaryRaw",
+						"Description": "Description of [weather] conditions. e.g. \"broken clouds\"",
+						"IsRequired": "N",
+						"IsIndexed": "N",
+						"IsCalculated": "N",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 60
+					}
+				],
+				"Rules": [
+					{
+						"RuleId": "SensorIdCand_Index",
+						"Name": "SensorIdCand Index",
+						"Description": "SensorId Index",
+						"ConstraintType": "PK",
+						"ParentEntityRef": "SensorDataCandidate",
+						"SortOrder": 10,
+						"Columns": {
+							"ColumnRef": "SensorIdRaw",
+							"SortOrder": 10
+						}
+					}, {
+						"RuleId": "DateCand_Index",
+						"Name": "DateCand_Index",
+						"Description": "SensorId Index",
+						"ConstraintType": "INDEX",
+						"ParentEntityRef": "SensorDataCandidate",
+						"SortOrder": 20,
+						"Columns": {
+							"ColumnRef": "SensorIdRaw",
+							"SortOrder": 20
+						}
+					}
+				]
+			}, {
+				"EntityId": "SensorDataReport",
+				"Name": "SensorDataReport",
+				"Description": "SensorDataReport",
+				"FormalName": "SensorDataReport",
+				"IsRepeatable": "Y",
+				"IsHierarchical": "Y",
+				"SortOrder": 300,
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}, {
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}
+				],
+				"Rules": [
+					{
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}, {
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}
+				]
+			}, {
+				"EntityId": "SensorDataStagingExceptions",
+				"Name": "SensorDataStagingExceptions",
+				"Description": "SensorDataStagingExceptions",
+				"FormalName": "SensorDataStagingExceptions",
+				"IsRepeatable": "Y",
+				"IsHierarchical": "Y",
+				"SortOrder": 400,
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}, {
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}
+				],
+				"Rules": [
+					{
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}, {
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}
+				]
+			}, {
+				"EntityId": "SensorDataValidationExceptions",
+				"Name": "SensorDataValidationExceptions",
+				"Description": "SensorDataValidationExceptions",
+				"FormalName": "SensorDataValidationExceptions",
+				"IsRepeatable": "Y",
+				"IsHierarchical": "Y",
+				"SortOrder": 500,
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}, {
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}
+				],
+				"Rules": [
+					{
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}, {
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}
+				]
+			}, {
+				"EntityId": "StormIncidents",
+				"Name": "StormIncidents",
+				"Description": "StormIncidents",
+				"FormalName": "StormIncidents",
+				"IsRepeatable": "Y",
+				"IsHierarchical": "Y",
+				"SortOrder": 600,
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}, {
+						"ColumnId": "String",
+						"PhysicalName": "NCName",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"IsIndexed": "Y",
+						"IsCalculated": "Y",
+						"Format": "?",
+						"Datatype": "S",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					}
+				],
+				"Rules": [
+					{
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}, {
+						"RuleId": "String",
+						"Name": "String",
+						"Description": "String",
+						"ConstraintType": "REFERENCE",
+						"ParentEntityRef": "String",
+						"SortOrder": 10,
+						"Properties": {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						},
+						"Columns": {
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10,
+							"ColumnRef": "String",
+							"ParentColumnRef": "String",
+							"SortOrder": 10
+						}
+					}
+				]
+			}
+		],
+		"Schemas": {
+			"SchemaId": "SensorDataCleaningLine",
+			"TargetRef": "SensorDataDemoDB",
+			"Name": "String",
+			"Description": "String",
+			"RootTag": "NCName",
+			"ObjectTag": "NCName",
+			"Owner": "NCName",
+			"Prefix": "NCName",
+			"Suffix": "S",
+			"IsLogical": "Y",
+			"PhysicalSchemaRef": "String",
+			"logicalSchemaRef": "String",
+			"SortOrder": 100,
+			"Properties": [
+				{
+					"PropertyId": "String",
+					"PropertyValue": "String",
+					"PropertyIndex": "String",
+					"SortOrder": 0
+				}, {
+					"PropertyId": "String",
+					"PropertyValue": "String",
+					"PropertyIndex": "String",
+					"SortOrder": 0
+				}
+			]
+		},
+		"Targets": {
+			"TargetId": "SensorDataDemoDB",
+			"Name": "String",
+			"Description": "String",
+			"TargetType": "SPARK",
+			"SortOrder": 10
+		},
+		"Tables": [
+			{
+				"TableId": "SensorDataStaging",
+				"SchemaRef": "SensorDataCleaningLine",
+				"EntityRef": "String",
+				"Name": "String",
+				"Tag": "String",
+				"Description": "String",
+				"SortOrder": 100,
+				"Columns": [
+					{
+						"ColumnId": "SensorIdRaw",
+						"Name": "SensorIdRaw",
+						"Description": "Unique Sensor Id",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "SensorIdRaw",
+						"SortOrder": 10
+					}, {
+						"ColumnId": "DateRaw",
+						"Name": "DateRaw",
+						"Description": "Datetimestamp (YYYY-MM-DD HH:MM:SS.mmm",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "DateRaw",
+						"SortOrder": 20
+					}, {
+						"ColumnId": "TemperatureRaw",
+						"Name": "TemperatureRaw",
+						"Description": "Temperature in C",
+						"IsRequired": "N",
+						"Format": "?",
+						"BaseColumnRef": "TemperatureRaw",
+						"SortOrder": 30
+					}, {
+						"ColumnId": "WindSpeedRaw",
+						"Name": "WindSpeedRaw",
+						"Description": "Wind Speed in MPH",
+						"IsRequired": "N",
+						"Format": "?",
+						"BaseColumnRef": "WindSpeedRaw",
+						"SortOrder": 40
+					}, {
+						"ColumnId": "TemperatureRaw",
+						"Name": "WindDirectionRaw",
+						"Description": "Wind Direction is measured in degrees clockwise from due North.",
+						"IsRequired": "N",
+						"Format": "?",
+						"BaseColumnRef": "WindDirectionRaw",
+						"SortOrder": 50
+					}, {
+						"ColumnId": "SummaryRaw",
+						"Name": "SummaryRaw",
+						"Description": "Description of [weather] conditions. e.g. \"broken clouds\"",
+						"IsRequired": "N",
+						"Format": "?",
+						"BaseColumnRef": "SummaryRaw",
+						"SortOrder": 60
+					}
+				]
+			}, {
+				"TableId": "SensorDataCandidate",
+				"SchemaRef": "SensorDataCleaningLine",
+				"EntityRef": "String",
+				"Name": "String",
+				"Tag": "String",
+				"Description": "String",
+				"SortOrder": 100,
+				"Columns": [
+					{
+						"ColumnId": "SensorIdCand",
+						"Name": "SensorIdRaw",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "SensorIdCand",
+						"SortOrder": 10
+					}, {
+						"ColumnId": "DateCand",
+						"Name": "DateRaw",
+						"Description": "Datetimestamp (YYYY-MM-DD HH:MM:SS.mmm",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "DateCand",
+						"SortOrder": 20
+					}, {
+						"ColumnId": "TemperatureCand",
+						"Name": "TemperatureRaw",
+						"Description": "Temperature in C",
+						"IsRequired": "N",
+						"Format": "?",
+						"BaseColumnRef": "TemperatureCand",
+						"SortOrder": 30
+					}, {
+						"ColumnId": "Unique Sensor Id",
+						"Name": "WindSpeedRaw",
+						"Description": "Wind Speed in MPH",
+						"IsRequired": "N",
+						"Format": "?",
+						"BaseColumnRef": "WindSpeedCand",
+						"SortOrder": 40
+					}, {
+						"ColumnId": "WindDirectionCand",
+						"Name": "WindDirectionRaw",
+						"Description": "Wind Direction is measured in degrees clockwise from due North.",
+						"IsRequired": "N",
+						"Format": "?",
+						"BaseColumnRef": "WindDirectionCand",
+						"SortOrder": 50
+					}, {
+						"ColumnId": "SummaryCand",
+						"Name": "SummaryRaw",
+						"Description": "Description of [weather] conditions. e.g. \"broken clouds\"",
+						"IsRequired": "N",
+						"Format": "?",
+						"BaseColumnRef": "SummaryCand",
+						"SortOrder": 60
+					}
+				]
+			}, {
+				"TableId": "SensorDataReport",
+				"SchemaRef": "SensorDataCleaningLine",
+				"EntityRef": "String",
+				"Name": "String",
+				"Tag": "String",
+				"Description": "String",
+				"SortOrder": 100,
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}, {
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}
+				]
+			}, {
+				"TableId": "SensorDataStagingExceptions",
+				"SchemaRef": "SensorDataCleaningLine",
+				"EntityRef": "String",
+				"Name": "String",
+				"Tag": "String",
+				"Description": "String",
+				"SortOrder": 100,
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}, {
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}
+				]
+			}, {
+				"TableId": "SensorDataValidationExceptions",
+				"SchemaRef": "SensorDataCleaningLine",
+				"EntityRef": "String",
+				"Name": "String",
+				"Tag": "String",
+				"Description": "String",
+				"SortOrder": 100,
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}, {
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}
+				]
+			}, {
+				"TableId": "StormIncidents",
+				"SchemaRef": "SensorDataCleaningLine",
+				"EntityRef": "String",
+				"Name": "String",
+				"Tag": "String",
+				"Description": "String",
+				"SortOrder": 100,
+				"Columns": [
+					{
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}, {
+						"ColumnId": "String",
+						"Name": "String",
+						"Tag": "String",
+						"Description": "String",
+						"IsRequired": "Y",
+						"Format": "?",
+						"BaseColumnRef": "String",
+						"SortOrder": 1,
+						"Properties": [
+							{
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}, {
+								"PropertyId": "String",
+								"PropertyValue": "String",
+								"PropertyIndex": "String",
+								"SortOrder": 0
+							}
+						]
+					}
+				]
+			}
+		],
+		"Functions": {
+			"FunctionId": "ISDATE ",
+			"Name": "ISDATE",
+			"Description": "ISDATE Returns 1 OR 0 ",
+			"DbFunctionType": "A",
+			"IsEmbedded": "Y",
+			"Language": "SQL",
+			"Body": "String",
+			"Returns": "B",
+			"Parameters": {
+				"Position": 1,
+				"Name": "",
+				"Datatype": "S"
+			}
+		},
+		"Comment": "Raw Data (CSV Format):\rSensorId, Date,              Temperature, WindSpeed, WindDirection, Summary\rF35,         2018-10-15 00:00, 9.3,               7.2,              204,            broken clouds\r\rStep: \r1.\tValidation check SensorId and Date are present;\r2.\tInsert all columns into Staging Database, [add LastUpdatedDate]\r",
+		"Queries": [
+			{
+				"QueryId": "CaptureQuery",
+				"SchemaRef": "SensorDataCleaningLine",
+				"Name": "CaptureQuery",
+				"Description": "String",
+				"RootTag": "Root",
+				"ObjectTag": "Row",
+				"IsDefaultedNull": "N",
+				"UseOutputTags": "N",
+				"Outputs": {
+					"OutputRef": "SensorDataStagingOutput",
+					"OutputTag": "Root",
+					"SortOrder": 10
+				},
+				"Filters": {
+					"FilterRef": "ValidateIndexes",
+					"SortOrder": 10
+				}
+			}, {
+				"QueryId": "StagingQuery",
+				"SchemaRef": "SensorDataCleaningLine",
+				"Name": "String",
+				"Description": "String",
+				"RootTag": "NCName",
+				"ObjectTag": "NCName",
+				"IsDefaultedNull": "Y",
+				"UseOutputTags": "Y",
+				"Outputs": [
+					{
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}, {
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}
+				],
+				"Filters": [
+					{
+						"FilterRef": "String",
+						"SortOrder": 10
+					}, {
+						"FilterRef": "String",
+						"SortOrder": 10
+					}
+				],
+				"Rules": [
+					{
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}, {
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}
+				]
+			}, {
+				"QueryId": "CaptureReportQuery",
+				"SchemaRef": "SensorDataCleaningLine",
+				"Name": "String",
+				"Description": "String",
+				"RootTag": "NCName",
+				"ObjectTag": "NCName",
+				"IsDefaultedNull": "Y",
+				"UseOutputTags": "Y",
+				"Outputs": [
+					{
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}, {
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}
+				],
+				"Filters": [
+					{
+						"FilterRef": "String",
+						"SortOrder": 10
+					}, {
+						"FilterRef": "String",
+						"SortOrder": 10
+					}
+				],
+				"Rules": [
+					{
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}, {
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}
+				]
+			}, {
+				"QueryId": "CaptureExceptionsQuery",
+				"SchemaRef": "SensorDataCleaningLine",
+				"Name": "String",
+				"Description": "String",
+				"RootTag": "NCName",
+				"ObjectTag": "NCName",
+				"IsDefaultedNull": "Y",
+				"UseOutputTags": "Y",
+				"Outputs": [
+					{
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}, {
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}
+				],
+				"Filters": [
+					{
+						"FilterRef": "String",
+						"SortOrder": 10
+					}, {
+						"FilterRef": "String",
+						"SortOrder": 10
+					}
+				],
+				"Rules": [
+					{
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}, {
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}
+				]
+			}, {
+				"QueryId": "StagingExceptionsQuery",
+				"SchemaRef": "SensorDataCleaningLine",
+				"Name": "String",
+				"Description": "String",
+				"RootTag": "NCName",
+				"ObjectTag": "NCName",
+				"IsDefaultedNull": "Y",
+				"UseOutputTags": "Y",
+				"Outputs": [
+					{
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}, {
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}
+				],
+				"Filters": [
+					{
+						"FilterRef": "String",
+						"SortOrder": 10
+					}, {
+						"FilterRef": "String",
+						"SortOrder": 10
+					}
+				],
+				"Rules": [
+					{
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}, {
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}
+				]
+			}, {
+				"QueryId": "StormIncidentsQuery",
+				"SchemaRef": "SensorDataCleaningLine",
+				"Name": "String",
+				"Description": "String",
+				"RootTag": "NCName",
+				"ObjectTag": "NCName",
+				"IsDefaultedNull": "Y",
+				"UseOutputTags": "Y",
+				"Outputs": [
+					{
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}, {
+						"OutputRef": "String",
+						"OutputTag": "NCName",
+						"SortOrder": 10
+					}
+				],
+				"Filters": [
+					{
+						"FilterRef": "String",
+						"SortOrder": 10
+					}, {
+						"FilterRef": "String",
+						"SortOrder": 10
+					}
+				],
+				"Rules": [
+					{
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}, {
+						"RuleRef": "String",
+						"JoinType": "LEFT"
+					}
+				]
+			}
+		],
+		"Outputs": {
+			"OutputId": "SensorDataStagingOutput",
+			"SchemaRef": "SensorDataCleaningLine",
+			"Name": "SensorDataStagingOutput",
+			"Description": "SensorDataStagingOutput",
+			"Properties": [
+				{
+					"PropertyId": "String",
+					"PropertyValue": "String",
+					"PropertyIndex": "String",
+					"SortOrder": 0
+				}, {
+					"PropertyId": "String",
+					"PropertyValue": "String",
+					"PropertyIndex": "String",
+					"SortOrder": 0
+				}
+			],
+			"Tables": {
+				"TableRef": "SensorDataStaging",
+				"TableAlias": "SDS",
+				"Description": "SensorDataStaging",
+				"IsRequired": "Y",
+				"IsHierarchical": "Y",
+				"MinNumberOfRows": 0,
+				"MaxNumberOfRows": 0,
+				"SortOrder": 10,
+				"Columns": [
+					{
+						"OutputColumnId": "SensorIdRawOutput",
+						"Name": "SensorIdRaw",
+						"Description": "SensorIdRaw",
+						"Format": "?",
+						"IsVisible": "Y",
+						"IsInsertable": "Y",
+						"IsEditable": "Y",
+						"IsRequired": "Y",
+						"IsOrderBy": "N",
+						"OrderBySortOrder": 0,
+						"IsGroupBy": "N",
+						"ColumnRef": "SensorIdRaw"
+					}, {
+						"OutputColumnId": "DateRawOutput",
+						"Name": "DateRaw",
+						"Description": "DateRaw",
+						"Format": "?",
+						"IsVisible": "Y",
+						"IsInsertable": "Y",
+						"IsEditable": "Y",
+						"IsRequired": "Y",
+						"IsOrderBy": "N",
+						"OrderBySortOrder": 0,
+						"IsGroupBy": "N",
+						"ColumnRef": "DateRaw"
+					}
+				]
+			}
+		},
+		"Filters": {
+			"FilterId": "ValidIndexes",
+			"SchemaRef": "SensorDataCleaningLine",
+			"Name": "String",
+			"Description": "String",
+			"Tag": "String",
+			"Properties": {
+				"PropertyId": "",
+				"PropertyValue": ""
+			},
+			"Conditions": [
+				{
+					"LogicalOperator": "AND",
+					"UnaryOperator": "",
+					"HasOpenBracket": "N",
+					"TableLeftRef": "SDS",
+					"ColumnLeftRef": "SensorIdRaw",
+					"LeftJoinIndicator": "N",
+					"Operator": "IS NOT NULL",
+					"RightJoinIndicator": "N",
+					"HasClosingBracket": "N",
+					"IsVisible": "Y",
+					"IsKeyField": "Y",
+					"IsRequired": "Y",
+					"IsEditable": "Y",
+					"SortOrder": 10,
+					"Name": "String",
+					"Description": "String",
+					"GroupId": "String",
+					"Properties": [
+						{
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}, {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					]
+				}, {
+					"LogicalOperator": "AND",
+					"UnaryOperator": "",
+					"HasOpenBracket": "Y",
+					"FunctionLeft": {
+						"FunctionId": "ISDATE",
+						"Parameters": {
+							"Position": 1,
+							"OutputColumnRef": "DateRawOutput"
+						}
+					},
+					"Operator": "=",
+					"HasClosingBracket": "Y",
+					"IsVisible": "Y",
+					"IsKeyField": "Y",
+					"IsRequired": "Y",
+					"IsEditable": "Y",
+					"SortOrder": 20,
+					"Name": "String",
+					"Description": "String",
+					"GroupId": "String",
+					"Properties": [
+						{
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}, {
+							"PropertyId": "String",
+							"PropertyValue": "String",
+							"PropertyIndex": "String",
+							"SortOrder": 0
+						}
+					]
+				}
+			]
+		},
+		"Workflows": {
+			"WorkflowId": "CaptureRawSensorData",
+			"Tag": "Sensor Data Project",
+			"Description": "Overhead Power Lines Sensor Readings",
+			"SortOrder": 100,
+			"IsRestartable": "Y",
+			"MaxRetryCount": 10,
+			"Blocks": [
+				{
+					"BlockId": "DataCapture",
+					"Name": "Data Capture",
+					"Description": "Raw Data Capture ",
+					"SortOrder": 100,
+					"Steps": {
+						"StepRef": "DoRawDataCapture",
+						"SortOrder": 10
+					}
+				}, {
+					"BlockId": "DataStaging",
+					"Name": "Data Staging",
+					"Description": "Validate Staging Records",
+					"SortOrder": 200,
+					"Steps": {
+						"StepRef": "DoStagingValidation",
+						"SortOrder": 10
+					}
+				}, {
+					"BlockId": "CaptureReporting",
+					"Name": "Capture Reporting",
+					"Description": "Run Capture Reports",
+					"SortOrder": 300,
+					"Steps": {
+						"StepRef": "DoCaptureReporting",
+						"SortOrder": 10
+					}
+				}
+			],
+			"Steps": [
+				{
+					"StepId": "DoRawDataCapture",
+					"Name": "DoRawDataCapture",
+					"Description": "DoRawDataCapture",
+					"QueryRef": "CaptureQuery",
+					"Action": "INSERT",
+					"ExecutionEngine": "INGESTION",
+					"SortOrder": 10,
+					"StepTargets": {
+						"TargetSchemaRef": "SensorDataCleaningLine",
+						"TargetTableRef": "SensorDataStaging"
+					}
+				}, {
+					"StepId": "DoStagingValidation",
+					"Name": "DoStagingValidation",
+					"Description": "DoStagingValidation",
+					"QueryRef": "StagingQuery",
+					"Action": "INSERT",
+					"ExecutionEngine": "INGESTION",
+					"SortOrder": 20,
+					"StepTargets": {
+						"TargetSchemaRef": "SensorDataCleaningLine",
+						"TargetTableRef": "SensorDataCandidate"
+					},
+					"StepDependencies": {
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"BlockRef": "DataCapture",
+						"MinCompleted": 1,
+						"MaxCompleted": 1,
+						"MinSucceeded": 1,
+						"MaxSucceeded": 1
+					},
+					"StepVariables": [
+						{
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}, {
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}
+					],
+					"StepValidation": {
+						"ValidationId": "IsNumeric",
+						"FilterRef": "ISNumericFilter",
+						"Threshold": "TBC",
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"Exceptions": {
+							"ExceptionId": "String",
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"ErrorMessage": "String",
+							"SchemaRef": "CleaningLine",
+							"TableRef": "CleaningLog",
+							"Severity": "Error",
+							"Action": "INSERT",
+							"ExceptionColumns": {
+								"SchemaRef": "String",
+								"TableRef": "String",
+								"ColumnRef": "String",
+								"OutputColumnRef": "String",
+								"ColumnFunction": "String",
+								"SortOrder": 1
+							}
+						}
+					}
+				}, {
+					"StepId": "DoCaptureReporting",
+					"Name": "DoCaptureReporting",
+					"Description": "DoCaptureReporting",
+					"QueryRef": "CaptureReportQuery",
+					"Action": "INSERT",
+					"ExecutionEngine": "INGESTION",
+					"SortOrder": 30,
+					"StepTargets": {
+						"TargetSchemaRef": "SensorDataCleaningLine",
+						"TargetTableRef": "SensorDataReport"
+					},
+					"StepDependencies": {
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"BlockRef": "DataStaging",
+						"MinCompleted": 1,
+						"MaxCompleted": 1,
+						"MinSucceeded": 1,
+						"MaxSucceeded": 1
+					},
+					"StepVariables": [
+						{
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}, {
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}
+					],
+					"StepValidation": {
+						"ValidationId": "String",
+						"FilterRef": "String",
+						"Threshold": "String",
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"Exceptions": {
+							"ExceptionId": "String",
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"ErrorMessage": "String",
+							"SchemaRef": "String",
+							"TableRef": "String",
+							"Severity": "Severe",
+							"Action": "INSERT",
+							"ExceptionColumns": {
+								"SchemaRef": "String",
+								"TableRef": "String",
+								"ColumnRef": "String",
+								"OutputColumnRef": "String",
+								"ColumnFunction": "String",
+								"SortOrder": 1
+							}
+						}
+					}
+				}, {
+					"StepId": "HandleRawDataExceptions",
+					"Name": "HandleRawDataExceptions",
+					"Description": "HandleRawDataExceptions",
+					"QueryRef": "CaptureExceptionsQuery",
+					"Action": "INSERT",
+					"ExecutionEngine": "INGESTION",
+					"SortOrder": 40,
+					"StepTargets": {
+						"TargetSchemaRef": "SensorDataCleaningLine",
+						"TargetTableRef": "SensorDataStagingExceptions"
+					},
+					"StepDependencies": {
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"BlockRef": "DataCapture",
+						"MinCompleted": 0,
+						"MaxCompleted": 1,
+						"MinSucceeded": 0,
+						"MaxSucceeded": 1
+					},
+					"StepVariables": [
+						{
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}, {
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}
+					],
+					"StepValidation": {
+						"ValidationId": "String",
+						"FilterRef": "String",
+						"Threshold": "String",
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"Exceptions": {
+							"ExceptionId": "String",
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"ErrorMessage": "String",
+							"SchemaRef": "String",
+							"TableRef": "String",
+							"Severity": "Severe",
+							"Action": "INSERT",
+							"ExceptionColumns": {
+								"SchemaRef": "String",
+								"TableRef": "String",
+								"ColumnRef": "String",
+								"OutputColumnRef": "String",
+								"ColumnFunction": "String",
+								"SortOrder": 1
+							}
+						}
+					}
+				}, {
+					"StepId": "HandleStagingExceptions",
+					"Name": "HandleStagingExceptions",
+					"Description": "HandleStagingExceptions",
+					"QueryRef": "StagingExceptionsQuery",
+					"Action": "INSERT",
+					"ExecutionEngine": "INGESTION",
+					"SortOrder": 50,
+					"StepTargets": {
+						"TargetSchemaRef": "SensorDataCleaningLine",
+						"TargetTableRef": "SensorDataValidationExceptions"
+					},
+					"StepDependencies": {
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"BlockRef": "DataStaging",
+						"MinCompleted": 0,
+						"MaxCompleted": 1,
+						"MinSucceeded": 0,
+						"MaxSucceeded": 1
+					},
+					"StepVariables": [
+						{
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}, {
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}
+					],
+					"StepValidation": {
+						"ValidationId": "String",
+						"FilterRef": "String",
+						"Threshold": "String",
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"Exceptions": {
+							"ExceptionId": "String",
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"ErrorMessage": "String",
+							"SchemaRef": "String",
+							"TableRef": "String",
+							"Severity": "Severe",
+							"Action": "INSERT",
+							"ExceptionColumns": {
+								"SchemaRef": "String",
+								"TableRef": "String",
+								"ColumnRef": "String",
+								"OutputColumnRef": "String",
+								"ColumnFunction": "String",
+								"SortOrder": 1
+							}
+						}
+					}
+				}, {
+					"StepId": "HandleStormIncidents",
+					"Name": "HandleStormIncidents",
+					"Description": "HandleStormIncidents",
+					"QueryRef": "StormIncidentsQuery",
+					"Action": "INSERT",
+					"ExecutionEngine": "REPORTGENERATION",
+					"SortOrder": 60,
+					"StepTargets": {
+						"TargetSchemaRef": "SensorDataCleaningLine",
+						"TargetTableRef": "StormIncidents"
+					},
+					"StepDependencies": {
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"BlockRef": "CaptureReporting",
+						"MinCompleted": 0,
+						"MaxCompleted": 1,
+						"MinSucceeded": 0,
+						"MaxSucceeded": 1
+					},
+					"StepVariables": [
+						{
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}, {
+							"VariableId": "String",
+							"Name": "String",
+							"DataType": "S",
+							"DefaultValue": "String",
+							"QueryDefaultValue": "String",
+							"OutputColumnRef": "String",
+							"SortOrder": 1
+						}
+					],
+					"StepValidation": {
+						"ValidationId": "String",
+						"FilterRef": "String",
+						"Threshold": "String",
+						"Name": "String",
+						"Description": "String",
+						"Tag": "String",
+						"SortOrder": 1,
+						"Exceptions": {
+							"ExceptionId": "String",
+							"Name": "String",
+							"Description": "String",
+							"Tag": "String",
+							"SortOrder": 1,
+							"ErrorMessage": "String",
+							"SchemaRef": "String",
+							"TableRef": "String",
+							"Severity": "Severe",
+							"Action": "INSERT",
+							"ExceptionColumns": {
+								"SchemaRef": "String",
+								"TableRef": "String",
+								"ColumnRef": "String",
+								"OutputColumnRef": "String",
+								"ColumnFunction": "String",
+								"SortOrder": 1
+							}
+						}
+					}
+				}
+			],
+			"Variables": [
+				{
+					"VariableId": "String",
+					"Name": "String",
+					"DataType": "S",
+					"DefaultValue": "String",
+					"QueryDefaultValue": "String",
+					"OutputColumnRef": "String",
+					"SortOrder": 1
+				}, {
+					"VariableId": "String",
+					"Name": "String",
+					"DataType": "S",
+					"DefaultValue": "String",
+					"QueryDefaultValue": "String",
+					"OutputColumnRef": "String",
+					"SortOrder": 1
+				}
+			]
+		}
+	}

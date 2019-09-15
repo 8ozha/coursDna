@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 3 sp1 (http://www.altova.com) by Martin Sexton (London Market Systems) -->
+<!-- Martin Sexton April 2019 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="IDENTIFIER">
+		<xs:annotation>
+			<xs:documentation>Is the entity which referenced by the constraint, for example a Master entity or entity containing a code list.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="INTEGER">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+	<xs:simpleType name="STRING">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="DATABASEIDENTIFIER">
+		<xs:annotation>
+			<xs:documentation>Constraint on database Ids.. It is a string with the restriction of Alpha/Numeric, "_" or "-". Valid values include "TableName", "COLUMN", "_1950-10-04_10-00", or "Field_1".</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NCName"/>
+	</xs:simpleType>
+	<xs:simpleType name="WRAPPERIDENTIFIER">
+		<xs:annotation>
+			<xs:documentation>Constraint on wrapper name used in an XML (&lt;Root&gt; ) or JSON ({"Root":) document. . It is a string with the restriction of Alpha/Numeric, "_" or "-". Valid values include "TableName", "COLUMN", "_1950-10-04_10-00", or "Field_1".</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NCName"/>
+	</xs:simpleType>
+	<xs:simpleType name="parentEntityIdentifier">
+		<xs:annotation>
+			<xs:documentation>
+</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="operatorEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">An operator used within the Filter logic.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="=">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="&lt;">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="&gt;">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"> </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="&lt;=">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="&gt;=">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"> </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="&lt;&gt;">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="!=">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"> </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IN">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NOT IN">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LIKE">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"> </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RLIKE">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NOT LIKE">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"> </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IS NULL">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IS NOT NULL">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"> </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IS IN DYNAMIC LIST">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"> </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IS NOT IN DYNAMIC LIST">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IS IN RESULT OF">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"> </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IS NOT IN RESULT OF">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SATISFY">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"> </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="languageTypeEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en"> Used to identify the Query Language. E.g. SQL</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="SQL">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">The Query Language used by Relational Databases</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="XQUERY">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Used to apply searches on XML NoSql Databases</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SPARQL">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"> Is a query language that enables users to query information in semantic databases.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="orderByEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">ASC | DESC | ASC NULLS FIRST | DESC NULLS FIRST | ASC NULLS LAST |
+DESC NULLS LAST</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="ASC">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Results returned in ascending order.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DESC">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Results returned in descending order.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ASC NULLS FIRST">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Results returned in ascending order, with Nulls being returned first.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DESC NULLS FIRST">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Results returned in descending order, with Nulls being returned first.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ASC NULLS LAST">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Results returned in ascending order, with Nulls being returned last.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DESC NULLS LAST">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Results returned in descending order, with Nulls being returned last.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="booleanYNEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Y= True or N = False </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="Y">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">"Y" = True</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="N">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">"N" = False</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="dbFunctionTypeEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Aggregate or Scalar Function</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="A">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Aggregate Function: Is a function that consolidates values from multiple rows to return a single summary value</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="S">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Scalar function: Takes one or more parameters as input and returns a single value.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="severityEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">The Severity of validation exception... an alert (Severe/Fatal, Error, Error, Warning or Informational)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="Severe">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Indicates a major system's error that may result in an unrecoverable scenario or a scenario what requires Administrator's manual intervention</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Error">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Indicates error event that lead or will lead the Query or Workflow step to abort, or reboot. However, it does not impact all instances of services.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Warning">
+				<xs:annotation>
+					<xs:documentation>Indicates potentially harmful situations, but the application continues to run.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Information">
+				<xs:annotation>
+					<xs:documentation>informational messages that are understandable to end-users and system administrators.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="actionTypeEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Action to be undertaken as a result of a Step completion.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="INSERT">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Insert the result from eh query into the target entity</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="	EXEC">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Execute the query and do not store the result. For example, truncate entity, drop entity etc... </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="constraintTypeEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en"> Types of index defined by the rule, e.g. Primary Key(PK), Foreign Key (Refernce)  or an Index.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="REFERENCE">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Parent Child Entity Relationship (Foreign Key)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PK">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Primary Key</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="INDEX">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Index</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="joinTypeEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Entity "Join" relationships. 
+			{ INNER | { { LEFT | RIGHT | FULL } | OUTER } } 
+			Please refer to appinfo URL</xs:documentation>
+			<xs:appinfo>https://i.stack.imgur.com/qje6o.png</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="LEFT">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Return all rows in LEFT Entity, including where they intersect.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RIGHT">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Return all rows in RIGHT Entity, including where they intersect.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="INNER">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Return all rows where both entities intersect: SELECT [List] FROM LEFT Entity.Value = RIGHT Entity.Value</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OUTER">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Opposite to INNER. Select all entries in both entities, where either LEFT Entity.Value or RIGHT Entity.Value is NULL.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FULL">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Select all entries in both entities, where LEFT Entity.Value or RIGHT Entity.Value exist, including NULLs.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FULL OUTER">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Select all entries in both entities, where LEFT Entity.Value or RIGHT Entity.Value exist, including NULLs.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LEFT OUTER">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Return all rows in LEFT Entity, excluding where they intersect.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RIGHT OUTER">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Return all rows in RIGHT Entity, excluding where they intersect.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="dataTypeEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">The data type. "D" – Date, "B" – Boolean, "S" string and "N" – Numeric.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="S">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">String</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="N">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Numeric(Integer/Decimal)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="B">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Boolean(Y/N)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="D">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Date</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="targetTypeEnum">
+		<xs:annotation>
+			<xs:documentation>The underlying source format, taken from bftargettype entity in Fincore. The underlying source format, taken from bftargettype table in Fincore. E.g. SPARK, CSV, XLS, MSSQLDB, ORADB, RESTWS and SOAPWS.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="SPARK">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CSV">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Comma Separated Values format</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="XLS">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Excel File</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MSSQLDB">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">MSSQL database</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ORADB">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Oracle database</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RESTWS">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">RESTful webservice (HTML, XML or JSON)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SOAPWS">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">SOAP webservice</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- ECB formats -->
+	<xs:simpleType name="formatEnum">
+		<xs:annotation>
+			<xs:documentation>Expected structure of textual fields. E.g. YYYYMMDD). Default output format is a string field.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING">
+			<xs:enumeration value="?">
+				<xs:annotation>
+					<xs:documentation>String (To be Deprecated)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Any">
+				<xs:annotation>
+					<xs:documentation>String</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="dd/MM/yyyy"/>
+			<xs:enumeration value="dd/MM/yyyy hh24:mi"/>
+			<xs:enumeration value="dd/MM/yyyy hh24:mi:ss"/>
+			<xs:enumeration value="FM999999999999">
+				<xs:annotation>
+					<xs:documentation>Integer</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FM999999999999.99">
+				<xs:annotation>
+					<xs:documentation>Decimal to 2 decimal places</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FM999999999999.9999">
+				<xs:annotation>
+					<xs:documentation>Decimal to 4 decimal places</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FM999999999999999999">
+				<xs:annotation>
+					<xs:documentation>Large Integer</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FM999999999999999999.99">
+				<xs:annotation>
+					<xs:documentation>Large Decimal to 2 decimal places</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FM999999999999999999.9999">
+				<xs:annotation>
+					<xs:documentation>Decimal to 4 decimal places</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FM999999999999999999.9999999999">
+				<xs:annotation>
+					<xs:documentation>Decimal to 10 decimal places</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FM999999999999999999.99999999999999999999">
+				<xs:annotation>
+					<xs:documentation>Decimal to 20 decimal places</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="YYYYMMDD">
+				<xs:annotation>
+					<xs:documentation>ISO 8601 Date B8601DAw. Notation (yyyymmdd)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="blockIdentifier">
+		<xs:annotation>
+			<xs:documentation>Constraint on wrapper name to be XML and JSON compliant</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="stepIdentifier">
+		<xs:annotation>
+			<xs:documentation>Constraint on wrapper name to be XML and JSON compliant</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="queryIdentifier">
+		<xs:annotation>
+			<xs:documentation>Constraint on wrapper name to be XML and JSON compliant</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="sortOrder">
+		<xs:annotation>
+			<xs:documentation>Defines the relative order of an entity (e.g. target, schema etc in a display list (of such entities) with a document, selection or report.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="INTEGER"/>
+	</xs:simpleType>
+	<xs:simpleType name="description">
+		<xs:annotation>
+			<xs:documentation>Is the long hand for the content</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING"/>
+	</xs:simpleType>
+	<xs:simpleType name="propertyIndexExpression">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:restriction base="STRING"/>
+	</xs:simpleType>
+	<xs:simpleType name="tag">
+		<xs:annotation>
+			<xs:documentation>Is application-specific string, to allow for efficient searching (by grouping of entities)
+- a note on columns: this is also the default table name for a column when used in an auto-generated query.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING"/>
+	</xs:simpleType>
+	<xs:simpleType name="codeListIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Entity Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="entityIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Entity Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="propertyIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Filter Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="tableIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Filter Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="groupIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Filter Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="columnIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Filter Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="exceptionIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Validation Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<!-- columnFunctionEnum -->
+	<xs:simpleType name="validationIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Validation Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="functionIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Filter Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="variableIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Filter Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="ruleIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Filter Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="filterIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Filter Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="targetIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Target Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="outputIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Output Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="schemaIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Schema Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="workflowIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique Workflow Identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="IDENTIFIER"/>
+	</xs:simpleType>
+	<xs:simpleType name="maxRetryCount">
+		<xs:annotation>
+			<xs:documentation>?</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="INTEGER"/>
+	</xs:simpleType>
+	<xs:simpleType name="constant">
+		<xs:annotation>
+			<xs:documentation> A value used within a Function. E.g. "*" within the Function COUNT(*)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING"/>
+	</xs:simpleType>
+	<xs:simpleType name="displayName">
+		<xs:annotation>
+			<xs:documentation> A Display Short Name</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="STRING"/>
+	</xs:simpleType>
+	<xs:simpleType name="objectTag">
+		<xs:restriction base="STRING"/>
+	</xs:simpleType>
+	<xs:complexType name="targets">
+		<xs:sequence>
+			<xs:element name="TargetId" type="targetIdentifier"/>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="TargetType" type="targetTypeEnum"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="workflows">
+		<xs:sequence>
+			<xs:element name="WorkflowId" type="workflowIdentifier"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+			<xs:element name="IsRestartable" type="booleanYNEnum"/>
+			<xs:element name="MaxRetryCount" type="maxRetryCount"/>
+			<xs:element name="Blocks" type="blocks" maxOccurs="unbounded"/>
+			<xs:element name="Steps" type="steps" maxOccurs="unbounded"/>
+			<xs:element name="Variables" type="stepVariables" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="blockSteps">
+		<xs:sequence>
+			<xs:element name="StepRef" type="stepIdentifier"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="blocks">
+		<xs:sequence>
+			<xs:element name="BlockId" type="blockIdentifier"/>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+			<xs:element name="Steps" type="blockSteps" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="stepDependencies">
+		<xs:sequence>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+			<xs:element name="BlockRef" type="blockIdentifier"/>
+			<xs:element name="MinCompleted" type="INTEGER"/>
+			<xs:element name="MaxCompleted" type="INTEGER"/>
+			<xs:element name="MinSucceeded" type="INTEGER"/>
+			<xs:element name="MaxSucceeded" type="INTEGER"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="exceptionColumns">
+		<xs:sequence>
+			<xs:element name="SchemaRef" type="schemaIdentifier" minOccurs="0"/>
+			<xs:element name="TableRef" type="entityIdentifier" minOccurs="0"/>
+			<xs:element name="ColumnRef" type="columnIdentifier" minOccurs="0"/>
+			<xs:element name="OutputColumnRef" type="columnIdentifier" minOccurs="0"/>
+			<xs:element name="ColumnFunction" type="STRING" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="stepValidationsExceptions">
+		<xs:sequence>
+			<xs:element name="ExceptionId" type="exceptionIdentifier"/>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+			<xs:element name="ErrorMessage" type="STRING" minOccurs="0"/>
+			<xs:element name="SchemaRef" type="schemaIdentifier" minOccurs="0"/>
+			<xs:element name="TableRef" type="tableIdentifier" minOccurs="0"/>
+			<xs:element name="Severity" type="severityEnum" minOccurs="0"/>
+			<xs:element name="Action" type="actionTypeEnum" minOccurs="0"/>
+			<xs:element name="ExceptionColumns" type="exceptionColumns" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="stepValidations">
+		<xs:sequence>
+			<xs:element name="ValidationId" type="validationIdentifier"/>
+			<xs:element name="FilterRef" type="filterIdentifier" minOccurs="0"/>
+			<xs:element name="Threshold" type="STRING" minOccurs="0"/>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+			<xs:element name="Exceptions" type="stepValidationsExceptions"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="stepVariables">
+		<xs:sequence>
+			<xs:element name="VariableId" type="variableIdentifier"/>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="DataType" type="dataTypeEnum" minOccurs="0"/>
+			<xs:element name="DefaultValue" type="STRING"/>
+			<xs:element name="QueryDefaultValue" type="STRING"/>
+			<xs:element name="OutputColumnRef" type="columnIdentifier" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="stepTargets">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="TargetSchemaRef" type="schemaIdentifier"/>
+				<xs:element name="TargetTableRef" type="tableIdentifier"/>
+			</xs:sequence>
+			<xs:element name="TargetQueryRef" type="queryIdentifier"/>
+			<xs:element name="TargetWorkflowRef" type="workflowIdentifier"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="steps">
+		<xs:sequence>
+			<xs:element name="StepId" type="stepIdentifier"/>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="QueryRef" type="queryIdentifier"/>
+			<xs:element name="Action" type="actionTypeEnum"/>
+			<xs:element name="ExecutionEngine" type="STRING"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1"/>
+			<xs:element name="StepTargets" type="stepTargets" maxOccurs="unbounded"/>
+			<xs:element name="StepDependencies" type="stepDependencies" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="StepVariables" type="stepVariables" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="StepValidation" type="stepValidations" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="variables">
+		<xs:sequence>
+			<xs:element name="VariableId" type="variableIdentifier"/>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="datatype" type="dataTypeEnum" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>VALUETYPE is synonymous of DATATYPE used elsewhere in the schema, hence this element has been renamed to DATATYPE from VALUETYPE. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DefaultValue" type="STRING"/>
+			<xs:element name="QueryDefaultValue" type="STRING"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="schemas">
+		<xs:sequence>
+			<xs:element name="SchemaId" type="schemaIdentifier"/>
+			<xs:element name="TargetRef" type="targetIdentifier" minOccurs="0"/>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="RootTag" type="WRAPPERIDENTIFIER"/>
+			<xs:element name="ObjectTag" type="WRAPPERIDENTIFIER" minOccurs="0"/>
+			<xs:element name="Owner" type="DATABASEIDENTIFIER" minOccurs="0"/>
+			<xs:element name="Prefix" type="DATABASEIDENTIFIER" minOccurs="0"/>
+			<xs:element name="Suffix" type="dataTypeEnum" minOccurs="0"/>
+			<xs:element name="IsLogical" type="booleanYNEnum"/>
+			<xs:element name="PhysicalSchemaRef" type="schemaIdentifier" minOccurs="0"/>
+			<xs:element name="logicalSchemaRef" type="schemaIdentifier" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="100" minOccurs="0"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="columns">
+		<xs:sequence>
+			<xs:element name="ColumnId" type="columnIdentifier">
+				<xs:annotation>
+					<xs:documentation>Globally unique</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PhysicalName" type="DATABASEIDENTIFIER">
+				<xs:annotation>
+					<xs:documentation>Original Entity Column Name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="Tag" type="tag" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="IsRequired" type="booleanYNEnum" default="N"/>
+			<xs:element name="IsIndexed" type="booleanYNEnum" default="N"/>
+			<xs:element name="IsCalculated" type="booleanYNEnum" default="N"/>
+			<xs:element name="Format" type="formatEnum" default="Any"/>
+			<xs:element name="Datatype" type="dataTypeEnum"/>
+			<xs:element name="SortOrder" type="sortOrder" default="10"/>
+			<xs:element name="Properties" type="properties" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tablesColumns">
+		<xs:sequence>
+			<xs:element name="ColumnId" type="columnIdentifier"/>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="IsRequired" type="booleanYNEnum" default="N" minOccurs="0"/>
+			<xs:element name="Format" type="formatEnum" minOccurs="0"/>
+			<xs:element name="BaseColumnRef" type="columnIdentifier"/>
+			<xs:element name="SortOrder" type="sortOrder" default="1" minOccurs="0"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="properties">
+		<xs:sequence>
+			<xs:element name="PropertyId" type="propertyIdentifier">
+				<xs:annotation>
+					<xs:documentation>is the unique property Id (with a QueryHub instance)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PropertyValue" type="STRING">
+				<xs:annotation>
+					<xs:documentation>Is the property value</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PropertyIndex" type="propertyIndexExpression" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>is to allow for differentiating between an array of values for the same PROPERTY,
+    e.g. a list of applicable countries.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SortOrder" type="sortOrder" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="parameters">
+		<xs:annotation>
+			<xs:documentation>
+
+</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Position" type="INTEGER"/>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Datatype" type="dataTypeEnum"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rulesColumns">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="ColumnRef" type="columnIdentifier"/>
+			<xs:element name="ParentColumnRef" type="columnIdentifier" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="10"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rules">
+		<xs:sequence>
+			<xs:element name="RuleId" type="ruleIdentifier"/>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="ConstraintType" type="constraintTypeEnum"/>
+			<xs:element name="ParentEntityRef" type="entityIdentifier"/>
+			<xs:element name="SortOrder" type="sortOrder" default="10"/>
+			<xs:element name="Properties" type="properties" minOccurs="0"/>
+			<xs:element name="Columns" type="rulesColumns"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tables">
+		<xs:sequence>
+			<xs:element name="TableId" type="tableIdentifier"/>
+			<xs:element name="SchemaRef" type="schemaIdentifier"/>
+			<xs:element name="EntityRef" type="entityIdentifier"/>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="100" minOccurs="0"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Columns" type="tablesColumns" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="entities">
+		<xs:sequence>
+			<xs:element name="EntityId" type="entityIdentifier"/>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="FormalName" type="DATABASEIDENTIFIER"/>
+			<xs:element name="IdColumnRef" type="columnIdentifier" minOccurs="0"/>
+			<xs:element name="ParentIdColumnRef" type="columnIdentifier" minOccurs="0"/>
+			<xs:element name="NameColumnRef" type="columnIdentifier" minOccurs="0"/>
+			<xs:element name="IsRepeatable" type="booleanYNEnum" default="Y"/>
+			<xs:element name="IsHierarchical" type="booleanYNEnum" default="N"/>
+			<xs:element name="SortOrder" type="sortOrder" default="100" minOccurs="0"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Columns" type="columns" maxOccurs="unbounded"/>
+			<xs:element name="Rules" type="rules" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="functions">
+		<xs:sequence>
+			<xs:element name="FunctionId" type="functionIdentifier"/>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Description" type="description"/>
+			<xs:element name="DbFunctionType" type="dbFunctionTypeEnum"/>
+			<xs:element name="IsEmbedded" type="booleanYNEnum"/>
+			<xs:element name="Language" type="languageTypeEnum">
+				<xs:annotation>
+					<xs:documentation>E.g. SQL </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Body" type="STRING"/>
+			<xs:element name="Returns" type="dataTypeEnum"/>
+			<xs:element name="Parameters" type="parameters" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="outputs">
+		<xs:annotation>
+			<xs:documentation>Outputs from an Query</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OutputId" type="outputIdentifier"/>
+			<xs:element name="SchemaRef" type="schemaIdentifier"/>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Description" type="description"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Tables" type="outputTables" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="outputTables">
+		<xs:sequence>
+			<xs:element name="TableRef" type="tableIdentifier"/>
+			<xs:element name="TableAlias" type="tableIdentifier"/>
+			<xs:element name="Description" type="description"/>
+			<xs:element name="IsRequired" type="booleanYNEnum"/>
+			<xs:element name="IsHierarchical" type="booleanYNEnum"/>
+			<xs:element name="MinNumberOfRows" type="INTEGER"/>
+			<xs:element name="MaxNumberOfRows" type="INTEGER"/>
+			<xs:element name="SortOrder" type="sortOrder" default="10"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Columns" type="outputColumns" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="outputColumns">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="OutputColumnId" type="columnIdentifier"/>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Description" type="description"/>
+			<xs:element name="Format" type="formatEnum"/>
+			<xs:element name="IsVisible" type="booleanYNEnum"/>
+			<xs:element name="IsInsertable" type="booleanYNEnum"/>
+			<xs:element name="IsEditable" type="booleanYNEnum"/>
+			<xs:element name="IsRequired" type="booleanYNEnum"/>
+			<xs:element name="IsOrderBy" type="booleanYNEnum" minOccurs="0"/>
+			<xs:element name="OrderBySortOrder" type="INTEGER" minOccurs="0"/>
+			<xs:element name="OrderByDirection" type="orderByEnum" minOccurs="0"/>
+			<xs:element name="IsGroupBy" type="booleanYNEnum" minOccurs="0"/>
+			<xs:choice>
+				<xs:element name="ColumnRef" type="columnIdentifier" minOccurs="0"/>
+				<xs:element name="Constant" type="constant" minOccurs="0"/>
+				<xs:element name="Expression" type="STRING" minOccurs="0"/>
+				<xs:element name="Function" type="functionAndParameters" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="functionAndParameters">
+		<xs:sequence>
+			<xs:element name="FunctionId" type="functionIdentifier"/>
+			<xs:element name="Parameters" type="functionParameters" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="filterConditions">
+		<xs:sequence>
+			<xs:element name="LogicalOperator" type="STRING" minOccurs="0"/>
+			<xs:element name="UnaryOperator" type="STRING" minOccurs="0"/>
+			<xs:element name="HasOpenBracket" type="booleanYNEnum" minOccurs="0"/>
+			<xs:choice>
+				<xs:sequence>
+					<xs:choice>
+						<xs:element name="TableLeftRef" type="tableIdentifier"/>
+						<xs:element name="TableAliasLeftRef" type="tableIdentifier"/>
+					</xs:choice>
+					<xs:element name="ColumnLeftRef" type="columnIdentifier"/>
+				</xs:sequence>
+				<xs:element name="ConstantLeft" type="constant"/>
+				<xs:element name="ExpressionLeft" type="STRING"/>
+				<xs:element name="FunctionLeft" type="functionAndParameters"/>
+			</xs:choice>
+			<xs:element name="LeftJoinIndicator" type="booleanYNEnum" minOccurs="0"/>
+			<xs:element name="Operator" type="operatorEnum"/>
+			<xs:choice minOccurs="0">
+				<xs:sequence>
+					<xs:choice>
+						<xs:element name="TableRightRef" type="tableIdentifier"/>
+						<xs:element name="TableAliasRightRef" type="tableIdentifier"/>
+					</xs:choice>
+					<xs:element name="ColumnRightRef" type="columnIdentifier"/>
+				</xs:sequence>
+				<xs:element name="ConstantRight" type="STRING"/>
+				<xs:element name="ExpressionRight" type="STRING"/>
+				<xs:element name="FunctionRight" type="functionAndParameters"/>
+			</xs:choice>
+			<xs:element name="RightJoinIndicator" type="booleanYNEnum" minOccurs="0"/>
+			<xs:element name="HasClosingBracket" type="booleanYNEnum" minOccurs="0"/>
+			<xs:element name="IsVisible" type="booleanYNEnum" minOccurs="0"/>
+			<xs:element name="IsKeyField" type="booleanYNEnum" minOccurs="0"/>
+			<xs:element name="IsRequired" type="booleanYNEnum" minOccurs="0"/>
+			<xs:element name="IsEditable" type="booleanYNEnum" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" minOccurs="0"/>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="GroupId" type="groupIdentifier" minOccurs="0"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="functionParameters">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="Position" type="INTEGER"/>
+			<xs:choice>
+				<xs:element name="Constant" type="constant" minOccurs="0"/>
+				<xs:element name="OutputColumnRef" type="columnIdentifier" minOccurs="0"/>
+				<xs:element name="Function" type="functionAndParameters"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="filters">
+		<xs:sequence>
+			<xs:element name="FilterId" type="filterIdentifier"/>
+			<xs:element name="SchemaRef" type="schemaIdentifier"/>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Description" type="description"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Conditions" type="filterConditions" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="queryOutputs">
+		<xs:sequence>
+			<xs:element name="OutputRef" type="outputIdentifier"/>
+			<xs:element name="OutputTag" type="WRAPPERIDENTIFIER"/>
+			<xs:element name="SortOrder" type="sortOrder" default="10"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="queryFilters">
+		<xs:sequence>
+			<xs:element name="FilterRef" type="filterIdentifier"/>
+			<xs:element name="SortOrder" type="sortOrder" default="10"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="queryRules">
+		<xs:sequence>
+			<xs:element name="RuleRef" type="ruleIdentifier"/>
+			<xs:element name="JoinType" type="joinTypeEnum"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="queries">
+		<xs:sequence>
+			<xs:element name="QueryId" type="queryIdentifier"/>
+			<xs:element name="SchemaRef" type="schemaIdentifier"/>
+			<xs:element name="Name" type="displayName"/>
+			<xs:element name="Description" type="description"/>
+			<xs:element name="Tag" type="tag" minOccurs="0"/>
+			<xs:element name="RootTag" type="WRAPPERIDENTIFIER"/>
+			<xs:element name="ObjectTag" type="WRAPPERIDENTIFIER" minOccurs="0"/>
+			<xs:element name="IsDefaultedNull" type="booleanYNEnum"/>
+			<xs:element name="UseOutputTags" type="booleanYNEnum" default="N" minOccurs="0"/>
+			<xs:element name="Properties" type="properties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Outputs" type="queryOutputs" maxOccurs="unbounded"/>
+			<xs:element name="Filters" type="queryFilters" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Rules" type="queryRules" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="codelists">
+		<xs:sequence>
+			<xs:element name="CodeListId" type="codeListIdentifier"/>
+			<xs:element name="Name" type="displayName" minOccurs="0"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="Datatype" type="dataTypeEnum">
+				<xs:annotation>
+					<xs:documentation>The data format of the underlying Database field. Eg. S = String</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Values" type="codelistValues" maxOccurs="unbounded"/>
+			<xs:element name="SortOrder" type="sortOrder" default="10"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="codelistValues">
+		<xs:sequence>
+			<xs:element name="Value" type="STRING"/>
+			<xs:element name="Description" type="description" minOccurs="0"/>
+			<xs:element name="SortOrder" type="sortOrder" default="10"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="FMDR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Entities" type="entities" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Schemas" type="schemas" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Targets" type="targets" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Tables" type="tables" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Functions" type="functions" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Queries" type="queries" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Outputs" type="outputs" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Filters" type="filters" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Workflows" type="workflows"/>
+				<xs:element name="CodeLists" type="codelists" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
